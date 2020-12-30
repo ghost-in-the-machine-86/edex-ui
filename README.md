@@ -8,10 +8,10 @@
   <a href="#featured-in"><img alt="undefined" src="https://img.shields.io/github/downloads/GitSquared/edex-ui/total.svg?style=popout"></a>
   <a href="https://github.com/GitSquared/edex-ui/blob/master/LICENSE"><img alt="undefined" src="https://img.shields.io/github/license/GitSquared/edex-ui.svg?style=popout"></a>
   <br>
-  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.4/eDEX-UI-Windows.exe" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/Windows/?color=blue&icon=windows&label"></a>
-  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.4/eDEX-UI-macOS.dmg" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/macOS/?color=grey&icon=apple&label"></a>
-  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.4/eDEX-UI-Linux-x86_64.AppImage" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/Linux64/?color=orange&icon=terminal&label"></a>
-  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.4/eDEX-UI-Linux-arm64-AppImage" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/LinuxArm64/?color=orange&icon=terminal&label"></a>
+  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.5/eDEX-UI-Windows.exe" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/Windows/?color=blue&icon=windows&label"></a>
+  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.5/eDEX-UI-macOS.dmg" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/macOS/?color=grey&icon=apple&label"></a>
+  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.5/eDEX-UI-Linux-x86_64.AppImage" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/Linux64/?color=orange&icon=terminal&label"></a>
+  <a href="https://github.com/GitSquared/edex-ui/releases/download/v2.2.5/eDEX-UI-Linux-arm64-AppImage" target="_blank"><img alt="undefined" src="https://badgen.net/badge/Download/LinuxArm64/?color=orange&icon=terminal&label"></a>
   <a href="https://aur.archlinux.org/packages/edex-ui" target="_blank"><img alt="undefined" src="https://badgen.net/badge/AUR/Package/cyan"></a>
   <br><br><br>
 </p>
@@ -44,15 +44,19 @@ Click the banner below and sign up to **Bytes**, the only newsletter cool enough
 ## Screenshots
 ![Default screenshot](https://github.com/GitSquared/edex-ui/raw/master/media/screenshot_default.png)
 
-_([neofetch](https://github.com/dylanaraps/neofetch) on eDEX-UI 2.2 with the default "tron" theme & QWERTY keyboard)_
+_[neofetch](https://github.com/dylanaraps/neofetch) on eDEX-UI 2.2 with the default "tron" theme & QWERTY keyboard_
 
-![Interstellar screenshot](https://github.com/GitSquared/edex-ui/raw/master/media/screenshot_white.png)
+![Blade screenshot](https://github.com/GitSquared/edex-ui/raw/master/media/screenshot_blade.png)
 
-_(Graphical settings editor and list of keyboard shortcuts on eDEX-UI 2.2 with the "interstellar" bright theme)_
+_Checking out available themes in [eDEX's config dir](https://github.com/GitSquared/edex-ui/wiki/userData) with [`ranger`](https://github.com/ranger/ranger) on eDEX-UI 2.2 with the "blade" theme_
 
 ![Disrupted screenshot](https://github.com/GitSquared/edex-ui/raw/master/media/screenshot_disrupted.png)
 
-_([cmatrix](https://github.com/abishekvashok/cmatrix) on eDEX-UI 2.2 with the experimental "tron-disrupted" theme, and the user-contributed DVORAK keyboard)_
+_[cmatrix](https://github.com/abishekvashok/cmatrix) on eDEX-UI 2.2 with the experimental "tron-disrupted" theme, and the user-contributed DVORAK keyboard_
+
+![Horizon screenshot](https://github.com/GitSquared/edex-ui/raw/master/media/screenshot_horizon.png)
+
+_Editing eDEX-UI source code with `nvim` on eDEX-UI 2.2 with the custom [`horizon-full`](https://github.com/GitSquared/horizon-edex-theme) theme_
 
 ## Q&A
 #### How do I get it?

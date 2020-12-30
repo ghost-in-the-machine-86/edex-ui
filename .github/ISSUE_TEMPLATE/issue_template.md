@@ -2,7 +2,7 @@
 name: Bug report
 about: Something's broken or screaming error messages at you? Let's fix it.
 title: ''
-labels: bug, investigation
+labels: investigation
 
 ---
 
@@ -17,7 +17,7 @@ labels: bug, investigation
 ## Technical information
 **Using version:**
  - [ ] `master` (running from GitHub-published source code, currently `v3.0.0-pre`)
- - [ ] `latest` (latest release, currently `v2.2.4`)
+ - [ ] `latest` (latest release, currently `v2.2.5`)
  - [ ] `vX.X.X` (specify other version)
 
 **Running on:**
@@ -35,4 +35,4 @@ labels: bug, investigation
 
 ## Problem
 
-(Write your report here)
+(Write your report here. Screenshots and step-by-step instructions can help a lot!)

@@ -554,51 +554,54 @@ class FilesystemDisplay {
                 name = block.name;
             }
 
+            let mime = require("mime-types")
+
             block.path = block.path.replace(/\\/g, "/");
 
-            let filetype = name.split(".")[name.split(".").length - 1];
+            let filetype = mime.lookup(name.split(".")[name.split(".").length - 1]);
             switch (filetype) {
-                case "xml":
-                case "yaml":
-                case "java":
-                case "cs":
-                case "cpp":
-                case "h":
-                case "html":
-                case "css":
-                case "js":
-                case "md":
-                case "log":
-                case "bat":
-                case "sh":
-                case "gd":
-                //To anyone else working with this: Feel free to add on to this list. - Surge
-                case "txt":
-                case "json":
-                    fs.readFile(block.path, 'utf-8', (err, data) => {
-                        if (err) {
-                            new Modal({
-                                type: "info",
-                                title: "Failed to load file: " + block.path,
-                                html: err
-                            });
-                            console.log(err);
-                        };
-                        window.keyboard.detach();
-                        new Modal(
-                            {
-                                type: "custom",
-                                title: _escapeHtml(name),
-                                html: `<textarea id="fileEdit" rows="40" cols="150" spellcheck="false">${data}</textarea><p id="fedit-status"></p>`,
-                                buttons: [
-                                    {label:"Save to Disk",action:`window.writeFile('${block.path}')`}
-                                ]
-                            }, () => {
-                                window.keyboard.attach();
-                                window.term[window.currentTerm].term.focus();
-                            }
-                        );
-                    });
+                case "application/pdf":
+                    let html = `<div>
+                        <div class="pdf_options">
+                            <button class="zoom_in">
+                                <svg viewBox="0 0 ${this.icons["zoomIn"].width} ${this.icons["zoomIn"].height}" fill="${this.iconcolor}">
+                                    ${this.icons["zoomIn"].svg}
+                                </svg>
+                            </button>
+                            <button class="zoom_out">
+                                <svg viewBox="0 0 ${this.icons["zoomOut"].width} ${this.icons["zoomOut"].height}" fill="${this.iconcolor}">
+                                    ${this.icons["zoomOut"].svg}
+                                </svg>
+                            </button>
+                            <button class="previous_page">
+                                <svg viewBox="0 0 ${this.icons["arrowBack"].width} ${this.icons["arrowBack"].height}" fill="${this.iconcolor}">
+                                    ${this.icons["arrowBack"].svg}
+                                </svg>
+                            </button>
+                            <span>Page: <span class="page_num"/></span><span>/</span> <span class="page_count"></span></span>
+                            <button class="next_page">
+                                <svg viewBox="0 0 ${this.icons["arrowNext"].width} ${this.icons["arrowNext"].height}" fill="${this.iconcolor}">
+                                    ${this.icons["arrowNext"].svg}
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="pdf_container fsDisp_mediaDisp">
+                            <canvas class="pdf_canvas" />
+                        </div>
+                    </div>`;
+                    const newModal = new Modal(
+                        {
+                            type: "custom",
+                            title: _escapeHtml(name),
+                            html: html
+                        }
+                    );
+                    new DocReader(
+                        {
+                            modalId: newModal.id,
+                            path: block.path
+                        }
+                    );
                     break;
                 case "pdf":
                     let html = `<div>
@@ -644,7 +647,33 @@ class FilesystemDisplay {
                     );
                     break;
                 default:
-                    return;
+                    if (mime.charset(filetype) === "UTF-8") {
+                        fs.readFile(block.path, 'utf-8', (err, data) => {
+                            if (err) {
+                                new Modal({
+                                    type: "info",
+                                    title: "Failed to load file: " + block.path,
+                                    html: err
+                                });
+                                console.log(err);
+                            };
+                            window.keyboard.detach();
+                            new Modal(
+                                {
+                                    type: "custom",
+                                    title: _escapeHtml(name),
+                                    html: `<textarea id="fileEdit" rows="40" cols="150" spellcheck="false">${data}</textarea><p id="fedit-status"></p>`,
+                                    buttons: [
+                                        {label:"Save to Disk",action:`window.writeFile('${block.path}')`}
+                                    ]
+                                }, () => {
+                                    window.keyboard.attach();
+                                    window.term[window.currentTerm].term.focus();
+                                }
+                            );
+                        });
+                   break;
+                }
             }
         }
 
